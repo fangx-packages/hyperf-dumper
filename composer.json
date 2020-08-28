@@ -1,0 +1,56 @@
+{
+    "name": "fangx/dumper",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "php",
+        "hyperf",
+        "dumper"
+    ],
+    "description": "",
+    "authors": [
+        {
+            "name": "nfangxu",
+            "email": "nfangxu@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.2.0",
+        "ext-json": "*",
+        "hyperf/http-message": "^2.0",
+        "psr/http-message": "^1.0",
+        "symfony/var-dumper": "^5.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*",
+        "phpstan/phpstan": "^0.12",
+        "friendsofphp/php-cs-fixer": "^2.16"
+    },
+    "autoload": {
+        "psr-4": {
+            "Fangx\\Dumper\\": "src/"
+        },
+        "files": [
+            "src/func.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Fangx\\Tests\\": "tests/"
+        }
+    },
+    "bin": [],
+    "config": {
+        "sort-packages": true
+    },
+    "scripts": {
+        "cs-fix": "php-cs-fixer fix $1",
+        "test": "./vendor/bin/phpunit -c phpunit.xml --color=always",
+        "test-coverage": "php -d zend_extension=xdebug ./vendor/bin/phpunit -c phpunit.xml --color=always --coverage-html .codeCoverage"
+    },
+    "extra": {
+        "hyperf": {
+            "config": "Fangx\\Dumper\\ConfigProvider"
+        }
+    }
+}
